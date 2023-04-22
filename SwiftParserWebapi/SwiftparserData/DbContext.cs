@@ -21,8 +21,6 @@ namespace SwiftparserData
             {
                 using (var connection = this.dbHelper.OpenConnection(true))
                 {
-                    connection.Open();
-
                     this.dbMigrator.CreateTables(connection);
                 }
             }

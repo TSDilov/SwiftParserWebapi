@@ -11,6 +11,11 @@ namespace SwiftparserData
     public class DbHelper : IDbHelper
     {
         public SQLiteConnection OpenConnection(bool isNew = false)
-            => new SQLiteConnection($"Data Source=Swift_Messages.sqlite;New={isNew.ToString().ToLower()}");
+        {
+            var connection = new SQLiteConnection($"Data Source=Swift_Messages.sqlite;New={isNew.ToString().ToLower()}");
+            connection.Open();
+
+            return connection;
+        }
     }
 }

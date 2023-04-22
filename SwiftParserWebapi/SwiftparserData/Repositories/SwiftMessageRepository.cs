@@ -4,7 +4,7 @@ using System.Data.SQLite;
 
 namespace SwiftparserData.Repositories
 {
-    public class SwiftMessageRepository
+    public class SwiftMessageRepository : ISwiftMessageRepository
     {
         private readonly IDbHelper dbHelper;
 
