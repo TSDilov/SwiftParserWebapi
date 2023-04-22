@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 using SwiftParserServices;
 using SwiftParserServices.Exceptions;
 using System.Text;
@@ -19,18 +20,26 @@ namespace SwiftParserWebapi.Controllers
         }
 
         [HttpPost]
+        [SwaggerOperation(
+            Summary = "Swift MT799 parser",
+            Description = "Parses files from Swift MT799.",
+            OperationId = "AddMessage"
+        )]
         public async Task<IActionResult> Post(IFormFile file)
         {
             var messageText = ReadText(file);
+            this.logger.LogInformation($"Trying to parse message: {messageText}");
             try
             {
                 await this.swiftParserService.ParseSwiftMessage(messageText);
             }
             catch(SwiftInvalidMessageException ex)
             {
+                this.logger.LogError(ex, "Error in parsing file.");
                 return BadRequest(ex.Message);
             }
 
+            this.logger.LogInformation("Successful parse!");
             return Ok();
         }
 
