@@ -1,9 +1,17 @@
-﻿using System.Data.SQLite;
+﻿using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace SwiftparserData
 {
     public class DbContext : IDbContext
     {
+        private readonly IDbMigrator dbMigrator;
+
+        public DbContext(IDbMigrator dbMigrator)
+        {
+            this.dbMigrator = dbMigrator;
+        }
+
         public void CreateIfNotExist()
         {
             if (!File.Exists("Swift_Messages.sqlite"))
@@ -12,7 +20,7 @@ namespace SwiftparserData
                 {
                     connection.Open();
 
-                    // Perform database operations here...
+                    this.dbMigrator.CreateTables(connection);
                 }
             }
         }
