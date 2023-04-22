@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using SwiftparserData.Interfaces;
+using SwiftparserData.Models;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 
 namespace SwiftparserData
@@ -23,6 +25,8 @@ namespace SwiftparserData
 
             var createTableCommand = new SQLiteCommand(createTableSql, connection);
             createTableCommand.ExecuteNonQuery();
+
+            
         }
     }
 }

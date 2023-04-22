@@ -1,4 +1,4 @@
-using SwiftparserData;
+using SwiftparserData.Interfaces;
 using SwiftParserWebapi;
 
 var builder = WebApplication.CreateBuilder(args);

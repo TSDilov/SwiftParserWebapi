@@ -16,6 +16,8 @@ namespace SwiftparserData.Models
             AuthenticationCode = authenticationCode;
         }
 
+        public int Id { get; internal set; }
+
         public string SenderCode { get; private set; }
 
         public string MessageType { get; private set; } 

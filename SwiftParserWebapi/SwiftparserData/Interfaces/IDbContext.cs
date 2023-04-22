@@ -1,4 +1,4 @@
-﻿namespace SwiftparserData
+﻿namespace SwiftparserData.Interfaces
 {
     public interface IDbContext
     {

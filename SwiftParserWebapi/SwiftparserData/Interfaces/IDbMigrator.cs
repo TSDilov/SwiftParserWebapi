@@ -1,7 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data.SQLite;
 
-namespace SwiftparserData
+namespace SwiftparserData.Interfaces
 {
     public interface IDbMigrator
     {
