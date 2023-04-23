@@ -11,5 +11,5 @@ Task: Parser for Swift MT799
 
 ## Description:
 
-*A three-layer architecture for converting a Swift MT799 message file. There is Data Layer, Service Layer and Web Api. The Data Layer has the connection with SQLite and the model for the Swift Message. We have Repository patern with Insert Method which inserts the data when it is parsed from the Swift MT799 message. There is DbMigrator for the tabke creation and DbHelper fpr the connection with the base. Implementation of the parser is in the Service layer where it has Swift Parser Service.*
+*A three-layer architecture for converting a Swift MT799 message file. There is Data Layer, Service Layer and Web Api. The Data Layer has the connection with SQLite and the model for the Swift Message. We have Repository patern with Insert Method which inserts the data when it is parsed from the Swift MT799 message. There is DbMigrator for the table creation and DbHelper for the connection with the base. Implementation of the parser is in the Service layer where it has Swift Parser Service.*
 
